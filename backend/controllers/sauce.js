@@ -88,7 +88,7 @@ exports.likeSauce = (req, res, next) => {
   let like = req.body.like
   let userId = req.body.userId
   let sauceId = req.params.id
-  console.log("test like" ,like);
+ 
   switch (like) {
     case 1 :
         Sauce.updateOne({ _id: sauceId }, { $push: { usersLiked: userId }, $inc: { likes: +1 }})
